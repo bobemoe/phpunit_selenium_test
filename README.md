@@ -1,7 +1,12 @@
-`vendor/bin/phpunit -v test.php`
+The phpunit in this composer.json is locked to 8.5.8 and everything works as expected:
+
+To set up, clone this repo, and `composer install`
+
+## Normal Functionality
+
+`vendor/bin/phpunit -v test.php --testdox`
 
 ```
-bob@chodbox:~/Projects/phpunittest$ vendor/bin/phpunit -v test.php --testdox
 PHPUnit 8.5.8 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 7.3.19-1~deb10u1
@@ -13,6 +18,8 @@ Time: 1.55 seconds, Memory: 4.00 MB
 
 OK (1 test, 1 assertion)
 ```
+
+## Broken Functionality
 
 Something weird happens after the phpunit 8.5.9 update:
 
