@@ -158,5 +158,5 @@ Unnamed Tests (App\Tests\UnnamedTests)
 ^C
 ```
 
-And it just goes on and on!!
+And it just goes on and on!! (382 tests)
 
