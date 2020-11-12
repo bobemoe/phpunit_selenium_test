@@ -6,6 +6,8 @@ To set up, clone this repo, and `composer install`
 
 `vendor/bin/phpunit -v test.php --testdox`
 
+The test passes:
+
 ```
 PHPUnit 8.5.8 by Sebastian Bergmann and contributors.
 
@@ -19,11 +21,35 @@ Time: 1.55 seconds, Memory: 4.00 MB
 OK (1 test, 1 assertion)
 ```
 
+Or if you do not have a seleium server running the test will be skipped:
+
+```
+PHPUnit 8.5.8 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 7.3.19-1~deb10u1
+
+Unnamed Tests (App\Tests\UnnamedTests)
+ ↩  [7.44 ms]
+   │
+   │ The Selenium Server is not active on host localhost at port 4444.
+   │
+   │ /home/bob/Projects/phpunittest/vendor/phpunit/phpunit-selenium/PHPUnit/Extensions/Selenium2TestCase.php:345
+   │ /home/bob/Projects/phpunittest/vendor/phpunit/phpunit-selenium/PHPUnit/Extensions/Selenium2TestCase.php:384
+   │ /home/bob/Projects/phpunittest/vendor/phpunit/phpunit-selenium/PHPUnit/Extensions/Selenium2TestCase.php:360
+   │
+
+Time: 80 ms, Memory: 6.00 MB
+
+
+OK, but incomplete, skipped, or risky tests!
+Tests: 1, Assertions: 0, Skipped: 1.
+````
+
 ## Broken Functionality
 
 Something weird happens after the phpunit 8.5.9 update:
 
-`composer require phpunit/phpunit:8.5.9`
+`composer require phpunit/phpunit:8.5.9 --update-with-dependencies`
 
 ```
 ./composer.json has been updated
@@ -36,7 +62,7 @@ Writing lock file
 Generating autoload files
 ```
 
-`vendor/bin/phpunit -v test.php`
+`vendor/bin/phpunit -v test.php --testdox`
 
 ```
 PHPUnit 8.5.9 by Sebastian Bergmann and contributors.
